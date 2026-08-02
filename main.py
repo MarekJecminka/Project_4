@@ -44,9 +44,9 @@ def odstranit_ukol(def_ukoly):
             break
 
     aktualizovane_ukoly = def_ukoly
-    aktualizovane_ukoly.pop(int(smazat))
+    odstraneny_ukol = aktualizovane_ukoly.pop(int(smazat))
 
-    print("\nÚkol '" + def_ukoly[int(smazat)] + "' byl odstraněn.")
+    print("\nÚkol '" + odstraneny_ukol[0] + "' byl odstraněn.")
 
     return aktualizovane_ukoly
 
