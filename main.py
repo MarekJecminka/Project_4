@@ -52,7 +52,7 @@ def odstranit_ukol(def_ukoly):
     
     aktualizoavane_ukoly = puvodni_ukoly
 
-    print("\nÚkol '" + odstraneny_ukol[0] + "' byl odstraněn.")
+    print("\nÚkol '" + odstraneny_ukol[0][0] + "' byl odstraněn.")
 
     return aktualizoavane_ukoly
 
