@@ -37,7 +37,7 @@ def odstranit_ukol(def_ukoly):
 
         odpoved_na_smazat = int(input("\nZadejte číslo úkolu, který chcete odstranit:"))
 
-        if int(odpoved_na_smazat) not in range(1, str(len(def_ukoly))):
+        if int(odpoved_na_smazat) not in range(1, len(def_ukoly)+1)):
             print("\nVybral jste neexistující úkol. Zadejte znovu číslo úkolu.")
         else:
             smazat = odpoved_na_smazat
