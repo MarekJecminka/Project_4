@@ -22,7 +22,7 @@ def pridat_ukol():
 
     print("Úkol '" + nazev_ukolu + "' byl přidán.")
 
-    return nazev_ukolu, popis_ukolu
+    return (nazev_ukolu, popis_ukolu)
 
 def zobrazit_ukoly(def_ukoly):
     for i, ukol in enumerate(def_ukoly):
@@ -65,7 +65,7 @@ def hlavni_menu():
             print("Neplatný vstup. Zadej číslo od 1 do 4")
         elif odpoved == "1":
             konkretni_nazev_ukolu, konkretni_popis_ukolu = pridat_ukol()
-            ukoly.append(konkretni_nazev_ukolu + " - " + konkretni_popis_ukolu)
+            ukoly.append(pridat_ukol())
         elif odpoved == "2":
             zobrazit_ukoly(ukoly)
         elif odpoved == "3":
