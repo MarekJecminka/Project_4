@@ -30,6 +30,7 @@ def zobrazit_ukoly(def_ukoly):
         print(str(i+1) + ". " + ukol[0] + " - " + ukol[1])
 
 def odstranit_ukol(def_ukoly):
+    smazat = ""
     while True:
         for i, ukol in enumerate(def_ukoly):
             print(str(i+1) + ". " + ukol[0] + " - " + ukol[1])
@@ -39,12 +40,13 @@ def odstranit_ukol(def_ukoly):
         if int(odpoved_na_smazat) not in range(1, str(len(def_ukoly))):
             print("\nVybral jste neexistující úkol. Zadejte znovu číslo úkolu.")
         else:
+            smazat = odpoved_na_smazat
             break
 
     puvodni_ukoly = def_ukoly
     odstraneny_ukol = []
     for i, ukol in enumerate(puvodni_ukoly):
-        if i+1 == int(odpoved_na_smazat):
+        if i+1 == int(smazat):
             puvodni_ukoly.pop(i)
             odstraneny_ukol.append(ukol)
     
