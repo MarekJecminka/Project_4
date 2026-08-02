@@ -32,7 +32,8 @@ def zobrazit_ukoly(def_ukoly):
 def odstranit_ukol(def_ukoly):
     while True:
         for i, ukol in enumerate(def_ukoly):
-            print(i+1 + ". " + ukol)
+            for nazev, popis in ukol:
+                print(i+1 + ". " + nazev + " - " + popis)
 
         odpoved_na_smazat = input("Zadejte číslo úkolu, který chcete odstranit:")
 
@@ -41,14 +42,19 @@ def odstranit_ukol(def_ukoly):
         else:
             break
 
-    ukoly = def_ukoly
-    for i, ukol in enumerate(ukoly):
-        if ukol == odpoved_na_smazat:
-            ukoly.pop(i)
+    puvodni_ukoly = def_ukoly
+    odstraneny_ukol = []
+    for i, ukol in enumerate(puvodni_ukoly):
+        for nazev, popis in ukol:
+            if i+1 == odpoved_na_smazat:
+                puvodni_ukoly.pop(ukol)
+                odstraneny_ukol.append(ukol)
+    
+    aktualizoavane_ukoly = puvodni_ukoly
 
-    print("Úkol '" + NĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚĚCO + "' byl odstraněn.")
+    print("Úkol '" + odstraneny_ukol[0] + "' byl odstraněn.")
 
-    return ukoly
+    return aktualizoavane_ukoly
 
 def hlavni_menu():
     while True:
