@@ -70,7 +70,7 @@ def hlavni_menu():
 
         odpoved = input("\nVyberte možnost (1-4): ")
 
-        if int(odpoved) not in range(1,4):
+        if int(odpoved) not in range(1,5):
             print("\nNeplatný vstup. Zadej číslo od 1 do 4.")
         elif odpoved == "1":
             ukoly.append(pridat_ukol())
