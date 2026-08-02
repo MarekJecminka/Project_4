@@ -40,21 +40,15 @@ def odstranit_ukol(def_ukoly):
         if int(odpoved_na_smazat) not in range(1, len(def_ukoly)+1)):
             print("\nVybral jste neexistující úkol. Zadejte znovu číslo úkolu.")
         else:
-            smazat = odpoved_na_smazat
+            smazat = str(int(odpoved_na_smazat) - 1)
             break
 
-    puvodni_ukoly = def_ukoly
-    odstraneny_ukol = []
-    for i, ukol in enumerate(puvodni_ukoly):
-        if i+1 == int(smazat):
-            puvodni_ukoly.pop(i)
-            odstraneny_ukol.append(ukol)
-    
-    aktualizoavane_ukoly = puvodni_ukoly
+    aktualizovane_ukoly = def_ukoly
+    aktualizovane_ukoly.pop(smazat)
 
-    print("\nÚkol '" + odstraneny_ukol[0][0] + "' byl odstraněn.")
+    print("\nÚkol '" + def_ukoly[smazat] + "' byl odstraněn.")
 
-    return aktualizoavane_ukoly
+    return aktualizovane_ukoly
 
 def hlavni_menu():
     ukoly = []
