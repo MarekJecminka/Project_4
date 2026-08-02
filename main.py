@@ -26,7 +26,8 @@ def pridat_ukol():
 
 def zobrazit_ukoly(def_ukoly):
     for i, ukol in enumerate(def_ukoly):
-        print(i+1 + ". " + ukol)
+        for nazev, popis in ukol:
+            print(i+1 + ". " + nazev + " - " + popis)
 
 def odstranit_ukol(def_ukoly):
     while True:
@@ -64,7 +65,6 @@ def hlavni_menu():
         if odpoved not in range(1,4):
             print("Neplatný vstup. Zadej číslo od 1 do 4")
         elif odpoved == "1":
-            konkretni_nazev_ukolu, konkretni_popis_ukolu = pridat_ukol()
             ukoly.append(pridat_ukol())
         elif odpoved == "2":
             zobrazit_ukoly(ukoly)
