@@ -7,16 +7,16 @@ email: jecminkam@seznam.cz
 
 def pridat_ukol():
     while True:
-        nazev_ukolu = input("\nZadejte název úkolu:")
+        nazev_ukolu = input("\nZadejte název úkolu: ")
         if nazev_ukolu == "":
-            print("\nZadali jste prázdný vstup. Zadejte znovu název úkolu:")
+            print("\nZadali jste prázdný vstup. Zadejte znovu název úkolu.")
         else:
             break
 
     while True:
-        popis_ukolu = input("Zadejte popis úkolu:")
+        popis_ukolu = input("Zadejte popis úkolu: ")
         if popis_ukolu == "":
-            print("\nZadali jste prázdný vstup. Zadejte znovu popis úkolu:")
+            print("\nZadali jste prázdný vstup. Zadejte znovu popis úkolu.")
         else:
             break   
 
@@ -31,11 +31,12 @@ def zobrazit_ukoly(def_ukoly):
 
 def odstranit_ukol(def_ukoly):
     smazat = ""
+    print("\n")
     while True:
         for i, ukol in enumerate(def_ukoly):
             print(str(i+1) + ". " + ukol[0] + " - " + ukol[1])
 
-        odpoved_na_smazat = int(input("\nZadejte číslo úkolu, který chcete odstranit:"))
+        odpoved_na_smazat = int(input("\nZadejte číslo úkolu, který chcete odstranit: "))
 
         if int(odpoved_na_smazat) not in range(1, len(def_ukoly)+1):
             print("\nVybral jste neexistující úkol. Zadejte znovu číslo úkolu.")
